@@ -1,37 +1,44 @@
-## Welcome to GitHub Pages
+# Optimal-Transport
 
-You can use the [editor on GitHub](https://github.com/Vincentqyw/Optimal-Transport/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+A simple sinkhorn algorithm to solve optimal transport problem writen in Matlab.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- Why I Create this repo? 
+- Because I am strugglling with understanding one of the core algorithm in papar [SuperGlue](https://arxiv.org/abs/1911.11763) (image matching). I want to figure out what happened in sinkhorn algorithm step by step. It will be helpful if you encounter the same problem.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# Demo
 
-```markdown
-Syntax highlighted code block
+- Given: a cost matrix S, two margins a, b, entropic regularization \lambda and convergence parameter \epslion
+- Output: optimal transport matrix P and Sinkhorn distance(optional) 
 
-# Header 1
-## Header 2
-### Header 3
+``` matlab
+lam = 1;
+epslion = 1e-6;
 
-- Bulleted
-- List
+% S_  = rand(3,4);
 
-1. Numbered
-2. List
+S  = [1,2,3,4;
+     5,6,7,8;
+     2,6,1,3];
 
-**Bold** and _Italic_ and `Code` text
+[m,n] = size(S);
 
-[Link](url) and ![Image](src)
+a  = ones(m,1);
+b  = ones(1,n);
+
+[P_bar, error] = SinkhornAlgorithm(S,a,b,lam,epslion);
+
+figure;
+axis equal
+imagesc(P_bar)
+set(gcf,'color',[1,1,1]);
+box off;
+axis off
 ```
+It will show a picture like below by running the code, it is what assignment matrix looks like.
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+![image](https://user-images.githubusercontent.com/18531182/161440518-9b7854e4-158d-4aac-a0f1-714adc374fe9.png)
 
-### Jekyll Themes
+# Reference
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Vincentqyw/Optimal-Transport/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+1. [Notes on Optimal Transport](https://michielstock.github.io/posts/2017/2017-11-5-OptimalTransport)
