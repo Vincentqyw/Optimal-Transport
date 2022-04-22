@@ -42,5 +42,6 @@ It will show a picture like below by running the code, it is what assignment mat
 # Reference
 
 1. [Notes on Optimal Transport](https://michielstock.github.io/posts/2017/2017-11-5-OptimalTransport)
+2. [Python Optimal Transport](https://pythonot.github.io/index.html), [Source Code](https://github.com/PythonOT/POT)
 
 
