@@ -43,5 +43,6 @@ It will show a picture like below by running the code, it is what assignment mat
 
 1. [Notes on Optimal Transport](https://michielstock.github.io/posts/2017/2017-11-5-OptimalTransport)
 2. [Python Optimal Transport](https://pythonot.github.io/index.html), [Source Code](https://github.com/PythonOT/POT)
+3. [SuperGlue: Learning Feature Matching with Graph Neural Networks](https://arxiv.org/abs/1911.11763), [Source Code](https://github.com/magicleap/SuperGluePretrainedNetwork)
 
 
