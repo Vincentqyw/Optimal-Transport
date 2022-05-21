@@ -8,8 +8,9 @@ A simple sinkhorn algorithm to solve optimal transport problem writen in Matlab.
 
 # Demo
 
-- Given: a cost matrix $ \mathbf{S} $, two margins $ a $, $ b $, entropic regularization $ \lambda $ and convergence parameter $ \epslion $
-- Output: optimal transport matrix $\mathbf{P}$ and Sinkhorn distance(optional) 
+Given: a cost matrix $ \mathbf{S} $, two margins $ a $, $ b $, entropic regularization $ \lambda $ and convergence parameter $ \epsilon $
+
+Output: optimal transport matrix $\mathbf{P}$ and Sinkhorn distance(optional) 
 
 ``` matlab
 lam = 1;
